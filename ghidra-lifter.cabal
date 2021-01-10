@@ -1,0 +1,88 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 4c1899c006e2901960f5ce01862b0c7cf965e0821e3a7e1721522ec5d29b45b2
+
+name:           ghidra-lifter
+version:        0.1.0.0
+description:    Please see the README on GitHub
+homepage:       https://github.com/theKidOfArcrania/ghidra-lifter#readme
+bug-reports:    https://github.com/theKidOfArcrania/ghidra-lifter/issues
+author:         theKidOfArcrania
+maintainer:     theKidOfArcrania
+copyright:      2021 theKidOfArcrania
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/theKidOfArcrania/ghidra-lifter
+
+library
+  exposed-modules:
+      Data.Ghidra
+      Data.Ghidra.AST
+      Data.Ghidra.Nodes
+      Data.Ghidra.PcodeTypes
+      Data.PrettyShow
+  other-modules:
+      Paths_ghidra_lifter
+  hs-source-dirs:
+      src
+  ghc-options: -g -Wall -Wcompat -Wincomplete-record-updates -Wincomplete-uni-patterns -Wredundant-constraints -fno-warn-orphans
+  build-depends:
+      aeson
+    , base >=4.7 && <5
+    , bytestring
+    , hashable
+    , mtl
+    , text
+    , transformers
+    , unordered-containers
+  default-language: Haskell2010
+
+executable ghidra-lifter-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_ghidra_lifter
+  hs-source-dirs:
+      app
+  ghc-options: -g -Wall -Wcompat -Wincomplete-record-updates -Wincomplete-uni-patterns -Wredundant-constraints -fno-warn-orphans -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      aeson
+    , base >=4.7 && <5
+    , bytestring
+    , ghidra-lifter
+    , hashable
+    , mtl
+    , text
+    , transformers
+    , unordered-containers
+  default-language: Haskell2010
+
+test-suite ghidra-lifter-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_ghidra_lifter
+  hs-source-dirs:
+      test
+  ghc-options: -g -Wall -Wcompat -Wincomplete-record-updates -Wincomplete-uni-patterns -Wredundant-constraints -fno-warn-orphans -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      aeson
+    , base >=4.7 && <5
+    , bytestring
+    , ghidra-lifter
+    , hashable
+    , mtl
+    , text
+    , transformers
+    , unordered-containers
+  default-language: Haskell2010
